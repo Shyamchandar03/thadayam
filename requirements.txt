@@ -1,0 +1,8 @@
+google-genai>=1.30
+edge-tts>=7.0
+gTTS>=2.5
+Pillow>=11.0
+numpy>=1.26
+requests>=2.31
+google-api-python-client>=2.140
+google-auth>=2.30

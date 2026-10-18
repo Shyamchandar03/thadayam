@@ -1,0 +1,177 @@
+{
+  "title": "கல்யாண மண்டப நெக்லஸ் திருட்டு",
+  "title_en": "The Wedding Hall Necklace Theft",
+  "scenes": [
+    {
+      "type": "hook",
+      "on_screen": "15 nimisham CCTV off",
+      "narration": "ஒரு கல்யாண மண்டபம். முந்நூறு பேர். பதினைந்து நிமிஷம் CCTV ஆஃப். அந்த இடைவெளியில, பத்து லட்சம் மதிப்புள்ள வைர நெக்லஸ் காணாம போச்சு.",
+      "image_prompt": "grand South Indian wedding hall at night, jasmine garlands, empty decorated stage, a single open velvet jewellery box on a table, suspenseful",
+      "on_screen_tamil": "15 நிமிஷம் CCTV ஆஃப்",
+      "subtitle": "Oru kalyana mandapam. Munnooru per. Padhinanju nimisham CCTV off. Andha gap-la, pathu laksham mathipulla diamond necklace kaanama pochu.",
+      "broll": [
+        {
+          "word": "கல்யாண",
+          "query": "indian wedding"
+        },
+        {
+          "word": "CCTV",
+          "query": "cctv camera"
+        }
+      ]
+    },
+    {
+      "type": "case",
+      "on_screen": "Case: Kaanama pona necklace",
+      "narration": "நான் நிழல். மதுரை, ராத்திரி ஒன்பது மணி. மணப்பெண் மீனாவோட வைர நெக்லஸை மணமகள் அறையில ஒரு பெட்டியில வச்சிருந்தாங்க. ஒன்பது பத்து முதல் ஒன்பது இருபத்தஞ்சு வரை CCTV வேலை செய்யல. அந்த நேரத்துல தான் நெக்லஸ் மாயமானது.",
+      "image_prompt": "bridal dressing room in a Madurai wedding hall, mirror with bulbs, silk saree on a chair, empty jewellery case, dim warm light",
+      "on_screen_tamil": "வழக்கு: காணாமல் போன நெக்லஸ்",
+      "subtitle": "Naan Nizhal. Madurai, raathiri onbadhu mani. Manapen Meena-voda diamond necklace-a bride room-la oru box-la vachirundhaanga. Onbadhu-pathu mudhal onbadhu-irubathanju varai CCTV work aagala. Andha neram dhaan necklace maayamaanadhu.",
+      "broll": [
+        {
+          "word": "மதுரை",
+          "query": "madurai temple"
+        },
+        {
+          "word": "ராத்திரி",
+          "query": "city night"
+        }
+      ]
+    },
+    {
+      "type": "suspect",
+      "on_screen": "Suspect 1: Karthik (photographer)",
+      "narration": "முதல் சந்தேக நபர், கார்த்திக். கல்யாண போட்டோகிராஃபர். அந்த நேரம் முழுக்க மேடையில போட்டோ எடுத்துட்டு இருந்தேன்னு சொல்றார்.",
+      "image_prompt": "silhouette of a wedding photographer holding a DSLR camera, back view, stage lights behind him, face not visible",
+      "on_screen_tamil": "சந்தேக நபர் 1: கார்த்திக் (போட்டோகிராஃபர்)",
+      "subtitle": "Mudhal suspect, Karthik. Kalyana photographer. Andha neram muzhukka stage-la photo eduthuttu irundhennu solraar.",
+      "broll": [
+        {
+          "word": "போட்டோகிராஃபர்",
+          "query": "camera flash"
+        }
+      ],
+      "person": {
+        "name": "Karthik",
+        "gender": "male",
+        "age": 32,
+        "look": "short black hair, trimmed beard, black shirt, DSLR camera strap on shoulder, guarded expression"
+      }
+    },
+    {
+      "type": "suspect",
+      "on_screen": "Suspect 2: Divya (bride's cousin)",
+      "narration": "ரெண்டாவது, திவ்யா. மணப்பெண்ணோட கசின். நான் மேடையில மீனா பக்கத்துலயே நின்னுட்டு இருந்தேன்னு உறுதியா சொல்றாங்க.",
+      "image_prompt": "young woman in a silk saree seen from behind standing near a wedding stage, jasmine in her hair, face not visible, dramatic shadows",
+      "on_screen_tamil": "சந்தேக நபர் 2: திவ்யா (மணப்பெண்ணின் கசின்)",
+      "subtitle": "Rendaavadhu, Divya. Manapenoda cousin. Naan stage-la Meena pakkathulaye ninnuttu irundhennu uruthiyaa solraanga.",
+      "broll": [
+        {
+          "word": "மேடையில",
+          "query": "wedding stage"
+        }
+      ],
+      "person": {
+        "name": "Divya",
+        "gender": "female",
+        "age": 26,
+        "look": "long braided hair with jasmine flowers, maroon silk saree, gold earrings, calm but tense expression"
+      }
+    },
+    {
+      "type": "suspect",
+      "on_screen": "Suspect 3: Selvam (catering contractor)",
+      "narration": "மூணாவது, செல்வம். சமையல் காண்ட்ராக்டர். மணமகள் அறைக்கு பக்கத்துல இருக்கற ஸ்டோர் ரூம் சாவி அவர்கிட்ட தான் இருக்கு.",
+      "image_prompt": "large wedding kitchen with brass vessels and steam, a man's hand holding an old iron key ring, face not visible",
+      "on_screen_tamil": "சந்தேக நபர் 3: செல்வம் (சமையல் காண்ட்ராக்டர்)",
+      "subtitle": "Moonaavadhu, Selvam. Samayal contractor. Bride room pakkathula irukkura store room key avarkitta dhaan irukku.",
+      "broll": [
+        {
+          "word": "சமையல்",
+          "query": "indian cooking"
+        }
+      ],
+      "person": {
+        "name": "Selvam",
+        "gender": "male",
+        "age": 50,
+        "look": "grey moustache, white veshti and half-sleeve shirt, towel on shoulder, worried expression"
+      }
+    },
+    {
+      "type": "clue",
+      "on_screen": "Clue 1",
+      "narration": "முதல் தடயம். நெக்லஸ் பெட்டி கிடைச்சது, ஆனா காலியா. ஸ்டோர் ரூம்ல, ரோஜா இதழ் மூட்டைகளுக்கு நடுவுல ஒளிச்சு வச்சிருந்தாங்க.",
+      "image_prompt": "empty velvet jewellery box lying among heaps of red rose petals in a dark storeroom, single beam of light, evidence close-up",
+      "on_screen_tamil": "தடயம் 1",
+      "subtitle": "Mudhal clue. Necklace box kidaichadhu, aana kaaliyaa. Store room-la, rose idhazh moottaigalukku naduvula olichu vachirundhaanga.",
+      "broll": [
+        {
+          "word": "ரோஜா",
+          "query": "rose petals"
+        }
+      ]
+    },
+    {
+      "type": "clue",
+      "on_screen": "Clue 2",
+      "narration": "ரெண்டாவது தடயம். ஸ்டோர் ரூமுக்கு இன்னொரு டூப்ளிகேட் சாவி இருக்கு. அது மணமகள் அறை சுவர்ல, எல்லாருக்கும் தெரியற மாதிரி மாட்டியிருந்தது.",
+      "image_prompt": "a single brass key hanging on a hook on an old painted wall in a bridal room, shallow depth of field, noir lighting",
+      "on_screen_tamil": "தடயம் 2",
+      "subtitle": "Rendaavadhu clue. Store room-ku innoru duplicate key irukku. Adhu bride room suvar-la, ellaarukkum theriyura maadhiri maatiyirundhadhu.",
+      "broll": [
+        {
+          "word": "சாவி",
+          "query": "old key"
+        }
+      ]
+    },
+    {
+      "type": "clue",
+      "on_screen": "Clue 3",
+      "narration": "மூணாவது தடயம். கார்த்திக் கேமராவுல ஒன்பது மணி முதல் ஒன்பதரை வரை, தொடர்ச்சியா மேடை போட்டோக்கள் இருக்கு. டைம் ஸ்டாம்ப் மாத்தப்படல. ஒவ்வொரு போட்டோவுலயும் யார் யார் இருக்காங்கன்னு நான் கவனமா பார்த்தேன். ஏதோ ஒண்ணு இடிக்குது.",
+      "image_prompt": "camera LCD screen showing a blurred wedding stage photo, a magnifying glass over printed photographs spread on a table, detective desk lamp",
+      "on_screen_tamil": "தடயம் 3",
+      "subtitle": "Moonaavadhu clue. Karthik camera-la onbadhu mani mudhal onbadharai varai, continuous-aa stage photos irukku. Time stamp maathala. Ovvoru photo-layum yaar yaar irukkaangannu naan kavanamaa paarthen. Edho onnu idikkudhu.",
+      "broll": [
+        {
+          "word": "கேமராவுல",
+          "query": "camera lens"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "on_screen": "Necklace-a eduthathu yaaru?",
+      "narration": "இப்போ உங்க முறை. நெக்லஸை எடுத்தது யார்? கார்த்திக்கா, திவ்யாவா, செல்வமா? எந்த தடயம் உங்களை அந்த முடிவுக்கு கொண்டு வந்ததுன்னு கமெண்ட்ல சொல்லுங்க. சரியா கண்டுபிடிச்சவங்க பேரை நாளைக்கு நான் சொல்வேன்.",
+      "image_prompt": "detective's corkboard with three faceless silhouettes connected by red string, a question mark card in the centre, dim lamp",
+      "on_screen_tamil": "நெக்லஸை எடுத்தது யார்?",
+      "subtitle": "Ippo unga turn. Necklace-a eduthathu yaaru? Karthik-aa, Divya-vaa, Selvam-aa? Endha clue unga mudivukku kondu vandhadhunnu comment-la sollunga. Correct-aa kandupidichavanga per-a naalaikku naan solven.",
+      "broll": []
+    }
+  ],
+  "solution": {
+    "culprit": "திவ்யா",
+    "culprit_aliases": [
+      "Divya",
+      "திவ்யா",
+      "divya",
+      "cousin",
+      "கசின்"
+    ],
+    "explanation": "திவ்யா மேடையில மீனா பக்கத்துல இருந்தேன்னு சொன்னாங்க. ஆனா ஒன்பது பத்து முதல் ஒன்பது இருபத்தஞ்சு வரை எடுத்த கார்த்திக்கோட ஒரு போட்டோவுலயும் திவ்யா இல்ல. அந்த நேரத்துல அவங்க மணமகள் அறையில இருந்த டூப்ளிகேட் சாவியை எடுத்து, நெக்லஸை எடுத்துட்டு, காலி பெட்டியை ஸ்டோர் ரூம்ல ஒளிச்சு வச்சாங்க. செல்வம் மேல சந்தேகம் வரணும்னு தான் அந்த இடம்.",
+    "key_clue": "தடயம் 3: கார்த்திக்கின் தொடர்ச்சியான மேடை போட்டோக்களில் திவ்யா இல்லை"
+  },
+  "youtube_title": "15 நிமிஷம் CCTV ஆஃப்... நெக்லஸ் எங்கே? | தடயம் கோப்பு #01 #Shorts",
+  "description": "கல்யாண மண்டபத்தில் வைர நெக்லஸ் மாயம். மூன்று சந்தேக நபர்கள், மூன்று தடயங்கள். நிழலுக்கு உதவுங்கள்: குற்றவாளி யார்? பதில் நாளை.",
+  "hashtags": [
+    "#தடயம்",
+    "#TamilMystery",
+    "#Shorts",
+    "#detective",
+    "#tamilstory",
+    "#puzzle",
+    "#mystery"
+  ],
+  "instagram_caption": "கல்யாண மண்டபத்தில் 15 நிமிஷம் CCTV ஆஃப். பத்து லட்சம் நெக்லஸ் மாயம். கார்த்திக்கா, திவ்யாவா, செல்வமா? 🔍 கமெண்ட்ல சொல்லுங்க, சரியா சொன்னவங்க பேர் நாளைக்கு!"
+}

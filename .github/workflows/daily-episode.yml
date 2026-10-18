@@ -1,0 +1,101 @@
+name: Daily Thadayam episode
+
+on:
+  schedule:
+    # 11:17 UTC = 4:47 PM IST. GitHub can start scheduled runs a little late,
+    # so the episode is usually ready around 5 PM IST. Change the time here.
+    - cron: "17 11 * * *"
+  workflow_dispatch:
+    inputs:
+      shoutouts:
+        description: "Extra solver names to thank (comma separated)"
+        required: false
+        default: ""
+      skip_upload:
+        description: "Build the video but do not post it"
+        type: boolean
+        default: false
+      mock:
+        description: "Offline test with the sample story (no API keys needed)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: thadayam-daily
+  cancel-in-progress: false
+
+jobs:
+  episode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install FFmpeg and text shaping libraries
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libraqm0 libfribidi0 libharfbuzz0b
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Make today's episode
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          YOUTUBE_PRIVACY: ${{ vars.YOUTUBE_PRIVACY }}
+          INSTAGRAM_AUTOPUBLISH: ${{ vars.INSTAGRAM_AUTOPUBLISH }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          TTS_VOICE: ${{ vars.TTS_VOICE }}
+          VOICE_ENGINES: ${{ vars.VOICE_ENGINES }}
+          GEMINI_TTS_VOICE: ${{ vars.GEMINI_TTS_VOICE }}
+          GEMINI_TTS_MODEL: ${{ vars.GEMINI_TTS_MODEL }}
+          GEMINI_TTS_STYLE: ${{ vars.GEMINI_TTS_STYLE }}
+          SERIES_NAME_EN: ${{ vars.SERIES_NAME_EN }}
+          ON_SCREEN_TEXT: ${{ vars.ON_SCREEN_TEXT }}
+          SHOUTOUTS: ${{ inputs.shoutouts }}
+          SKIP_UPLOAD: ${{ inputs.skip_upload }}
+          MOCK: ${{ inputs.mock }}
+          PYTHONUNBUFFERED: "1"
+        timeout-minutes: 35
+        run: python -m thadayam.main
+
+      - name: Keep the video (download from this run's Artifacts)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thadayam-episode
+          path: |
+            out/**/thadayam_*.mp4
+            out/**/thumbnail.jpg
+            out/**/script.json
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Save episode history
+        if: always()
+        run: |
+          git config user.name "thadayam-bot"
+          git config user.email "thadayam-bot@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet || git commit -m "Episode history update"
+          git push
