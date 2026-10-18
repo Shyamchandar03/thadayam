@@ -49,10 +49,9 @@ GEMINI_TTS_MODELS = [m.strip() for m in env(
     "GEMINI_TTS_MODEL", "gemini-3.8-flash-tts,gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts"
 ).split(",") if m.strip()]
 GEMINI_TTS_VOICE = env("GEMINI_TTS_VOICE", "Charon")       # deep, calm; try Algenib, Orus, Fenrir
-# Keep it in the short "Say ...:" form. A long instruction gets read aloud as part of the audio.
-GEMINI_TTS_STYLE = env(
-    "GEMINI_TTS_STYLE",
-    "Say in a calm, deep, mysterious detective voice, at a natural storytelling pace")
+# Empty by default: Gemini sometimes reads a style instruction aloud ("Say in a calm...")
+# before the Tamil, even in the short "Say ...:" form. The voice itself sets the tone.
+GEMINI_TTS_STYLE = env("GEMINI_TTS_STYLE", "")
 ELEVENLABS_API_KEY = env("ELEVENLABS_API_KEY")
 # "Brian": deep, calm narrator from the ElevenLabs default voices (works on the free plan).
 ELEVENLABS_VOICE_ID = env("ELEVENLABS_VOICE_ID", "nPczCjzI2devNBz1zQrb")

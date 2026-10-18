@@ -94,7 +94,8 @@ def _gemini(text: str, path: Path) -> Speech:
             continue
         try:
             r = client.models.generate_content(
-                model=model, contents=f"{config.GEMINI_TTS_STYLE}:\n{text}",
+                model=model,
+                contents=f"{config.GEMINI_TTS_STYLE}:\n{text}" if config.GEMINI_TTS_STYLE else text,
                 config=types.GenerateContentConfig(
                     response_modalities=["AUDIO"],
                     speech_config=types.SpeechConfig(voice_config=types.VoiceConfig(
