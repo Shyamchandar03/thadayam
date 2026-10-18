@@ -1,3 +1,44 @@
 {
-  "episodes": [  ]
+  "episodes": [
+    {
+      "number": 1,
+      "date": "2026-10-18",
+      "title": "மாயமான சோழர் நாணயம்",
+      "title_en": "The Missing Chola Coin",
+      "solution": {
+        "culprit": "வினோத்",
+        "culprit_aliases": [
+          "வினோத்",
+          "Vinod",
+          "Manager",
+          "மேலாளர்"
+        ],
+        "explanation": "லாக்கர் அசல் சாவியால் மட்டுமே திறக்கப்பட்டது, அதனால் முருகனால் அதைத் திறக்க முடியாது. பால்கனியில் பதிந்த காலடி தடம் சங்கீதாவின் வாக்குமூலத்தை உறுதி செய்கிறது. ஆனால், இன்வெர்ட்டர் பேட்டரி காலையிலேயே அகற்றப்பட்டதால், வினோத் சொன்னது போல் ஃபேன் ஓடியிருக்க வாய்ப்பே இல்லை; அவரே பொய் சொல்லி நாணயத்தைத் திருடியவர்.",
+        "key_clue": "தடயம் மூன்று: இன்வெர்ட்டர் பேட்டரி காலையிலேயே கழற்றி எடுத்துச் செல்லப்பட்டிருந்தது."
+      },
+      "youtube_id": "Y2Wb7ZXEHD0",
+      "instagram_id": "18096921788119981",
+      "suspects": [
+        {
+          "name": "Vinod",
+          "gender": "male",
+          "age": 36,
+          "look": "South Indian man in mid-thirties, neat trimmed beard, wearing a formal light blue collared shirt, tense neutral expression"
+        },
+        {
+          "name": "Sangeetha",
+          "gender": "female",
+          "age": 29,
+          "look": "South Indian woman in late twenties, tied-back hair, wearing modern cotton kurti, spectacles, calm observant gaze"
+        },
+        {
+          "name": "Murugan",
+          "gender": "male",
+          "age": 42,
+          "look": "South Indian man in early forties, rugged look, wearing a faded khaki work shirt, cautious and weary expression"
+        }
+      ],
+      "solvers_thanked": []
+    }
+  ]
 }
