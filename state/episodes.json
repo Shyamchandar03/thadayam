@@ -39,6 +39,47 @@
         }
       ],
       "solvers_thanked": []
+    },
+    {
+      "number": 2,
+      "date": "2026-10-19",
+      "title": "காரைக்குடி மரகதக் கொள்ளை",
+      "title_en": "The Karaikudi Emerald Heist",
+      "solution": {
+        "culprit": "ரமேஷ்",
+        "culprit_aliases": [
+          "ரமேஷ்",
+          "Ramesh",
+          "சமையல்காரர்",
+          "சமையலர்",
+          "Cook Ramesh"
+        ],
+        "explanation": "சமையலறையின் கேஸ் சிலிண்டர் மதியம் இரண்டரை மணிக்கே காலியாகிவிட்டது. அதனால் ரமேஷ் மாலை மூன்று மணிக்கு அடுப்பில் அல்வா கிண்டினார் என்று சொன்னது அப்பட்டமான பொய். அவர் பொய் சொல்லிவிட்டு பதக்கத்தைத் திருடியுள்ளார்.",
+        "key_clue": "தடயம் இரண்டு: சமையலறை சிலிண்டர் மதியம் இரண்டரை மணிக்கே தீர்ந்துவிட்டது."
+      },
+      "youtube_id": "49Vd2tipmrE",
+      "instagram_id": "18026023433704279",
+      "suspects": [
+        {
+          "name": "Ramesh",
+          "gender": "male",
+          "age": 42,
+          "look": "South Indian man with short oiled black hair, light mustache, wearing a white cotton shirt and traditional kitchen apron, nervous expression."
+        },
+        {
+          "name": "Kavitha",
+          "gender": "female",
+          "age": 35,
+          "look": "Sharp South Indian woman with tied-back wet hair, wearing a grey handloom cotton saree, holding a clipboard, composed and calm."
+        },
+        {
+          "name": "Selvam",
+          "gender": "male",
+          "age": 48,
+          "look": "Sun-tanned South Indian man with grey-flecked stubble, wearing a worn green work shirt, looking weary."
+        }
+      ],
+      "solvers_thanked": []
     }
   ]
 }
