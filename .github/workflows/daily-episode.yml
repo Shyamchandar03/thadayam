@@ -1,10 +1,6 @@
 name: Daily Thadayam episode
 
 on:
-  schedule:
-    # 11:17 UTC = 4:47 PM IST. GitHub can start scheduled runs a little late,
-    # so the episode is usually ready around 5 PM IST. Change the time here.
-    - cron: "17 11 * * *"
   workflow_dispatch:
     inputs:
       shoutouts:
