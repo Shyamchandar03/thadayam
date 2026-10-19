@@ -1,5 +1,6 @@
 """Writes each episode with the Gemini API (free tier) as strict JSON."""
 import json
+import re
 import time
 from . import config
 
@@ -33,12 +34,24 @@ LANGUAGE
 - The whole narration together must be 650 to 950 Tamil characters (about 70-85 seconds).
 
 SCENE ORDER (the "scenes" list)
-{reveal_rule}1. "hook"    - one or two gripping sentences. on_screen: a short punchy line (max 5 words).
-2. "case"    - "நான் {investigator}." + place, time, what happened.
+1. "hook"    - ALWAYS the very first scene. See THE HOOK below.
+{reveal_rule}2. "case"    - "நான் {investigator}." + place, time, what happened.
 3-5. "suspect" x3 - who they are and their claim/alibi. on_screen: "சந்தேக நபர் N: name (role)".
 6-8. "clue" x3   - one clue each. on_screen: "தடயம் N".
 9. "cta"     - ask who did it AND which clue proves it; tell viewers to comment; promise to
    say the names of correct solvers tomorrow. on_screen: the big question (max 6 words).
+
+THE HOOK (the most important part: viewers decide in the first 3 seconds whether to swipe)
+- The FIRST sentence is spoken in under 3 seconds: at most 6 Tamil words / 40 characters.
+  It must land the single most shocking, impossible or high-stakes fact of today's case.
+- Start in the middle of the action. NEVER open with a greeting, the series name, the
+  investigator's name, "ஒரு ஊர்ல", "இன்னைக்கு", a date, a place description or any setup.
+- Then 1 or 2 more very short sentences (whole hook at most 150 characters) that open a loop
+  the viewer can only close by watching to the end: a contradiction, a ticking clock, an
+  impossible detail, or a direct challenge to the viewer.
+- Today's hook style: {hook_style}
+- on_screen: the hook's core in at most 5 words, readable in one glance (a number, a
+  contradiction or a question works best). The youtube_title should use the same hook.
 
 {subtitle_rule}Each scene also has "image_prompt": an ENGLISH description of a single cinematic still
 for that scene (places, objects, atmosphere; people only from behind or in shadow; no text
@@ -83,11 +96,26 @@ English letters, the way Tamil people text: "Suspect 1: Karthik (photographer)",
 the Tamil voice speaks). Keep the "narration" itself in Tamil script for the voice.
 """
 
-REVEAL_RULE = """0. "reveal"  - FIRST scene, under 25 seconds: solve YESTERDAY's case in a satisfying way.
-   Yesterday's case: "{prev_title}". Culprit: {prev_culprit}. Why: {prev_explanation}
+REVEAL_RULE = """1b. "reveal" - SECOND scene, right after the hook, under 15 seconds: solve YESTERDAY's case.
+   Open it with one bridge line like "ஆனா முதல்ல, நேற்றைய கேஸ்..." so it does not break
+   the hook's tension. Yesterday's case: "{prev_title}". Culprit: {prev_culprit}.
+   Why: {prev_explanation}
    {solver_line}
-   End with a short bridge into today's case. on_screen: "நேற்றைய பதில்: {prev_culprit}".
+   End by jumping back into today's case. on_screen: "நேற்றைய பதில்: {prev_culprit}".
 """
+
+# Rotated by episode number so the openings don't all sound alike.
+HOOK_STYLES = [
+    "an impossible fact (something that cannot have happened, but did)",
+    "a ticking clock (a number of minutes or seconds that changed everything)",
+    "a direct challenge to the viewer (most people miss the clue in this case; will you?)",
+    "a contradiction (two facts that cannot both be true)",
+    "the stakes first (what was lost and what it was worth, in one breath)",
+    "a strange object or detail found at the scene that makes no sense yet",
+]
+
+HOOK_FIRST_SENTENCE_MAX = 55      # characters; the prompt asks for 40, this leaves slack
+HOOK_MAX = 190
 
 
 def _build_prompt(number: int, history: list[str], prev: dict | None, solvers: list[str]) -> str:
@@ -106,6 +134,7 @@ def _build_prompt(number: int, history: list[str], prev: dict | None, solvers: l
         series=config.SERIES_NAME, series_en=config.SERIES_NAME_EN,
         investigator=config.INVESTIGATOR, number=number,
         history="; ".join(history[-40:]) or "none yet", reveal_rule=reveal_rule,
+        hook_style=HOOK_STYLES[number % len(HOOK_STYLES)],
         subtitle_rule=SUBTITLE_RULE if config.TANGLISH else "",
         subtitle_key=' "subtitle": "...",' if config.TANGLISH else "")
 
@@ -120,8 +149,20 @@ def validate(ep: dict, needs_reveal: bool) -> list[str]:
         problems.append("need exactly 3 suspects and 3 clues")
     if not types or types[-1] != "cta":
         problems.append("last scene must be cta")
-    if needs_reveal and (not types or types[0] != "reveal"):
-        problems.append("first scene must be reveal")
+    if not types or types[0] != "hook":
+        problems.append("first scene must be hook")
+    else:
+        hook = scenes[0].get("narration", "").strip()
+        first = re.split(r"[.?!।]", hook, maxsplit=1)[0].strip()
+        if len(first) > HOOK_FIRST_SENTENCE_MAX:
+            problems.append(f"the hook's first sentence is {len(first)} characters; it must be "
+                            f"spoken in under 3 seconds (at most 40 characters)")
+        if len(hook) > HOOK_MAX:
+            problems.append(f"the hook is {len(hook)} characters; keep it under 150")
+        if config.INVESTIGATOR in first or config.SERIES_NAME in first:
+            problems.append("the hook must not open with the series or investigator name")
+    if needs_reveal and (len(types) < 2 or types[1] != "reveal"):
+        problems.append("second scene must be reveal (right after the hook)")
     if config.TANGLISH and any(not s.get("subtitle", "").strip() for s in scenes):
         problems.append("every scene needs a Tanglish subtitle")
     for s in scenes:
