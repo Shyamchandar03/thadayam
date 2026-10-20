@@ -21,10 +21,39 @@ RULES FOR THE CASE
 - Family-friendly: no gore, no graphic violence, no sexual content, no harm to children,
   no real people, real brands, real businesses, castes, religions or political parties.
 - Exactly 3 suspects with ordinary Tamil first names and a role each.
-- Exactly 3 clues. It must be FAIR PLAY: a careful viewer can name the culprit from the
-  clues alone. One clue may mislead; the decisive clue must be shown, not explained.
-  Never reveal or strongly hint the answer in the narration.
+- Exactly 3 clues.
 - Do NOT repeat these earlier cases: {history}
+
+DIFFICULTY (this is a HARD puzzle: most viewers should guess WRONG; only a viewer who
+pauses, replays and thinks should solve it)
+- FAIR PLAY STILL: every fact needed to solve it is said out loud in the episode. No
+  secret twins, hidden passages, or facts that appear only in the solution.
+- NO SINGLE CLUE SOLVES IT. The answer appears only when the viewer COMBINES two pieces:
+  a clue plus a small detail a suspect said in their own alibi, or two clues together
+  (time arithmetic, a sequence of events, cause and effect).
+- The giveaway is a quiet, ordinary-sounding detail, not a dramatic one. Good kinds of
+  giveaway: a suspect's alibi mentions something they could only know if they were at the
+  scene; a time that does not add up when you do the maths; physical common sense (ice
+  melts, wet paint, tea goes cold, mud dries, a phone at five percent battery, a power cut
+  stops a fan, a train or bus time, a temple bell or a festival on a fixed day, which side
+  the sun rises); something that should have happened but did NOT (the dog did not bark).
+- Plant the giveaway early, inside a SUSPECT scene, buried mid-sentence among other
+  harmless details, so viewers have forgotten it by the clues.
+- EVERY suspect has a motive AND a real opportunity, and each looks guilty for a moment.
+- RED HERRING: one clue must point strongly at an INNOCENT suspect, and should be the
+  most memorable clue. The culprit is never the person who held the key, was last seen
+  near the item, had the weakest alibi, or seems the "obvious" choice.
+- The culprit should seem the LEAST likely at first glance (helpful, has a strong alibi,
+  or even the one who reported the crime), but never chosen at random: the logic must
+  point to them and only them.
+- The decisive clue must NOT be the third (last) clue, must NOT name the culprit, and
+  must be narrated in exactly the same flat tone as the other clues.
+- NEVER hint in the narration: no "கவனிச்சீங்களா", "ஏதோ ஒன்னு இடிக்குது", "something is
+  off", "இது முக்கியம்", "நான் கவனமா பார்த்தேன்", no stressing a word, no rhetorical
+  question that points at a clue. Shadow states facts; he does not comment on them.
+- Before answering, test it yourself: if a viewer remembers only ONE clue, who would they
+  accuse? That person must be innocent. If the answer is obvious within 10 seconds of the
+  clues, make it harder.
 
 LANGUAGE
 - All narration and on-screen text in natural spoken Tamil (Tamil script), the way a
@@ -81,7 +110,10 @@ Return ONLY JSON with exactly this shape:
     "culprit": "culprit name in Tamil",
     "culprit_aliases": ["Tamil name", "English spelling", "role words viewers might use"],
     "explanation": "2-3 Tamil sentences explaining how the clues prove it",
-    "key_clue": "the decisive clue, one Tamil line"
+    "key_clue": "the decisive clue, one Tamil line",
+    "deduction_steps": ["2 to 4 short ENGLISH steps: which two facts combine and why"],
+    "red_herring": "ENGLISH: which clue points at which innocent suspect, and why it is wrong",
+    "why_not_others": "ENGLISH: one line per innocent suspect proving they could not have done it"
   }},
   "youtube_title": "curiosity title in Tamil, under 90 characters, ending with | {series} கோப்பு #{number:02d} #Shorts",
   "description": "2 Tamil sentences inviting viewers to solve it in the comments",
@@ -116,6 +148,11 @@ HOOK_STYLES = [
 
 HOOK_FIRST_SENTENCE_MAX = 55      # characters; the prompt asks for 40, this leaves slack
 HOOK_MAX = 190
+
+# Narrator comments that give the puzzle away (Tamil script and Tanglish subtitles).
+HINT_PHRASES = ["இடிக்குது", "கவனிச்சீங்களா", "கவனமா பார்த்தேன்", "இது முக்கியம்",
+                "idikkudhu", "idikudhu", "kavanichingala", "kavanamaa paarthen",
+                "kavanama parthen", "idhu mukkiyam", "something is off"]
 
 
 def _build_prompt(number: int, history: list[str], prev: dict | None, solvers: list[str]) -> str:
@@ -185,8 +222,17 @@ def validate(ep: dict, needs_reveal: bool) -> list[str]:
     for key in ("title", "solution", "youtube_title", "description", "hashtags"):
         if not ep.get(key):
             problems.append(f"missing {key}")
-    if not (ep.get("solution") or {}).get("culprit"):
+    sol = ep.get("solution") or {}
+    if not sol.get("culprit"):
         problems.append("missing solution.culprit")
+    if len(sol.get("deduction_steps") or []) < 2 or not sol.get("red_herring"):
+        problems.append("solution needs deduction_steps (2+ steps combining facts) and red_herring")
+    told = " ".join(s.get("narration", "") + " " + s.get("subtitle", "")
+                    for s in scenes if s.get("type") in ("suspect", "clue")).lower()
+    hints = [h for h in HINT_PHRASES if h in told]
+    if hints:
+        problems.append(f"the narration hints at the answer ({', '.join(hints)}); state the "
+                        f"facts flatly with no comments")
     return problems
 
 
