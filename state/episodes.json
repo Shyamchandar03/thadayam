@@ -80,6 +80,56 @@
         }
       ],
       "solvers_thanked": []
+    },
+    {
+      "number": 3,
+      "date": "2026-10-20",
+      "title": "கும்பகோணம் தங்கச் சங்கு மர்மம்",
+      "title_en": "The Mystery of the Kumbakonam Gold Conch",
+      "solution": {
+        "culprit": "வினோத்",
+        "culprit_aliases": [
+          "வினோத்",
+          "Vinod",
+          "மேலாளர்",
+          "Manager"
+        ],
+        "explanation": "வங்கிக்குச் செல்லும் ரயில்வே கேட் மதியம் இரண்டு மணி முதல் இரண்டரை மணி வரை முழுமையாக மூடப்பட்டிருந்தது. எனவே, இரண்டு பத்து மணிக்கு ரயில்வே கேட் வழியே வங்கிக்குச் சென்று இரண்டரைக்குத் திரும்பியதாக வினோத் கூறிய அலிபி அப்பட்டமான பொய். அவர் வெளியே செல்லாமல் சங்கீதாவின் சாவியைக் கொண்டு தங்கச் சங்கைத் திருடியுள்ளார்.",
+        "key_clue": "தடயம் இரண்டு (ரயில்வே கேட் மூடப்பட்டிருந்தது)",
+        "deduction_steps": [
+          "Vinod claimed in his alibi that he rode his scooter at 2:10 PM through the railway gate to the bank and returned at 2:30 PM.",
+          "Clue 2 reveals that the railway gate towards the bank was completely shut from 2:00 PM to 2:30 PM.",
+          "Crossing a closed railway gate on a scooter in that time window is impossible, proving Vinod's alibi is a fabricated lie.",
+          "He remained inside, exploited Sangeetha's left-behind key (Clues 1 and 3) to open the locker, and stole the golden conch."
+        ],
+        "red_herring": "Clue 1 heavily frames Sangeetha because her personal handkerchief and drawer key were found right beside the opened locker, leading viewers to suspect her immediately, whereas she genuinely left them behind when stepping out for tea.",
+        "why_not_others": "Sangeetha had no reason to leave her own handkerchief and key as blatant evidence if she stole it; Murali guarded the main gate the entire duration and his observation aligns with the timeline."
+      },
+      "youtube_id": "YNvfTx9O4Jk",
+      "instagram_id": "18132882265742804",
+      "suspects": [
+        {
+          "name": "Vinod",
+          "gender": "male",
+          "age": 38,
+          "look": "Neat formal collared shirt, rimless rectangular glasses, combed dark hair, calm and composed expression."
+        },
+        {
+          "name": "Sangeetha",
+          "gender": "female",
+          "age": 31,
+          "look": "Traditional cotton saree, hair pulled back into a clip, subtle bindi, tense and guarded expression."
+        },
+        {
+          "name": "Murali",
+          "gender": "male",
+          "age": 46,
+          "look": "Khaki security shirt with badge, thick mustache, stern watchful gaze, weathered face."
+        }
+      ],
+      "solvers_thanked": [
+        "shyamchandarshyamchandar"
+      ]
     }
   ]
 }
