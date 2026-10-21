@@ -130,6 +130,53 @@
       "solvers_thanked": [
         "shyamchandarshyamchandar"
       ]
+    },
+    {
+      "number": 4,
+      "date": "2026-10-21",
+      "title": "கோவை தங்க நாடா மர்மம்",
+      "title_en": "The Mystery of the Coimbatore Gold Shuttle",
+      "solution": {
+        "culprit": "ஹரிஷ்",
+        "culprit_aliases": [
+          "ஹரிஷ்",
+          "Harish",
+          "ஊழியர்",
+          "Staff Harish"
+        ],
+        "explanation": "கேண்டீனில் மதியம் ஒரு மணி முதல் மூன்று மணி வரை மின்சாரம் முற்றிலும் துண்டிக்கப்பட்டிருந்ததால், இரண்டு பத்து மணிக்கு எலக்ட்ரிக் கெட்டிலில் சுடுதண்ணீர் வைத்து டீ குடித்ததாக ஹரிஷ் கூறியது அப்பட்டமான பொய். அவர் அந்த நேரத்தில் கண்ணாடிப் பேழையைத் திறந்து தங்க நாடாவைத் திருடியுள்ளார்.",
+        "key_clue": "தடயம் இரண்டு: கேண்டீன் மின்சார பிளக்குகள் ஒரு மணி முதல் மூன்று வரை வேலை செய்யவில்லை.",
+        "deduction_steps": [
+          "Harish claims he was in the canteen at 2:10 PM boiling water in an electric kettle to make hot tea.",
+          "Clue 2 confirms that all electrical power plugs in the canteen were completely dead from 1:00 PM to 3:00 PM due to a blown fuse.",
+          "An electric kettle cannot boil water without electric power; since power had been out since 1:00 PM, Harish's alibi is physically impossible, proving he used that time to commit the theft."
+        ],
+        "red_herring": "Clue 1 shows a security uniform's brass button found right next to the empty display case, which strongly incriminates the security officer Manjula. However, it was either lost during her regular rounds earlier or planted.",
+        "why_not_others": "Sathish is innocent because Clue 3 proves his laptop recorded continuous document typing and saving from 2:00 PM to 2:28 PM; Manjula is innocent because the button near the safe was a red herring and she was stationed at the entrance as claimed."
+      },
+      "youtube_id": "NssXbKODPhg",
+      "instagram_id": "18130379470802749",
+      "suspects": [
+        {
+          "name": "Sathish",
+          "gender": "male",
+          "age": 42,
+          "look": "South Indian man, 42, neatly combed oiled hair with slight grey streaks, wire-rimmed glasses, crisp cream khadi shirt, calm scholarly expression."
+        },
+        {
+          "name": "Manjula",
+          "gender": "female",
+          "age": 36,
+          "look": "South Indian woman, 36, sharp jawline, strict posture, khaki security officer uniform with epaulettes, stern and watchful eyes."
+        },
+        {
+          "name": "Harish",
+          "gender": "male",
+          "age": 29,
+          "look": "South Indian man, 29, slightly disheveled wavy black hair, blue staff apron over a checkered casual shirt, mild nervous flicker in his eyes."
+        }
+      ],
+      "solvers_thanked": []
     }
   ]
 }
