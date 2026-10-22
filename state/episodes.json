@@ -177,6 +177,52 @@
         }
       ],
       "solvers_thanked": []
+    },
+    {
+      "number": 5,
+      "date": "2026-10-22",
+      "title": "மகாபலிபுரம் வைர மோதிர மர்மம்",
+      "title_en": "The Mahabalipuram Diamond Ring Mystery",
+      "solution": {
+        "culprit": "தீபா",
+        "culprit_aliases": [
+          "Deepa",
+          "Cook",
+          "சமையல்காரர்"
+        ],
+        "explanation": "தீபா மாலை 6:20-க்கு இன்டக்ஷன் ஸ்டவ்வில் பக்கோடா சுட்டதாகக் கூறினார். ஆனால் மாலை 6:00 முதல் 6:30 வரை மின்வெட்டு இருந்ததால், மின்சாரம் இல்லாமல் இன்டக்ஷன் ஸ்டவ் வேலை செய்திருக்காது. அவர் பொய் சொல்கிறார்.",
+        "key_clue": "மாலை ஆறு மணி முதல் ஆறு முப்பது வரை முழுமையான மின்வெட்டு இருந்தது.",
+        "deduction_steps": [
+          "Deepa specified she used an induction stove at 6:20 PM.",
+          "Clue 1 states there was a total power cut from 6:00 PM to 6:30 PM.",
+          "An induction stove requires electricity to function. Therefore, her alibi is physically impossible, proving she lied and committed the theft during that window."
+        ],
+        "red_herring": "The dog Raja barking (Clue 2) and the CCTV footage (Clue 3) are distractions. The dog barks when hungry, which is normal for 6:15 PM, and the CCTV figure was at 6:10 PM, before the theft occurred at 6:15 PM.",
+        "why_not_others": "Vimal's alibi of watching the sunset is plausible for that time. Suresh seeing the dog bark matches the dog's hunger habits and doesn't contradict the timeline."
+      },
+      "youtube_id": "tP78YwNUwR8",
+      "instagram_id": "18231297529325573",
+      "suspects": [
+        {
+          "name": "Vimal",
+          "gender": "male",
+          "age": 28,
+          "look": "Young man in a linen shirt, wearing sunglasses on his head, looking relaxed."
+        },
+        {
+          "name": "Deepa",
+          "gender": "female",
+          "age": 42,
+          "look": "A woman in a simple saree with an apron, holding a kitchen towel, looking nervous."
+        },
+        {
+          "name": "Suresh",
+          "gender": "male",
+          "age": 50,
+          "look": "A stern man in a khaki security uniform, holding a flashlight, with a sharp gaze."
+        }
+      ],
+      "solvers_thanked": []
     }
   ]
 }
