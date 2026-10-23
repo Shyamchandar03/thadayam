@@ -223,6 +223,54 @@
         }
       ],
       "solvers_thanked": []
+    },
+    {
+      "number": 6,
+      "date": "2026-10-23",
+      "title": "தூத்துக்குடி வைர நெக்லஸ் மர்மம்",
+      "title_en": "The Tuticorin Diamond Necklace Mystery",
+      "solution": {
+        "culprit": "சோபியா",
+        "culprit_aliases": [
+          "Sofia",
+          "Sobiya",
+          "sister",
+          "thangai"
+        ],
+        "explanation": "தூத்துக்குடி ஒரு கடலோர நகரம். அன்று 90 சதவீத ஈரப்பதம் இருந்தது. இவ்வளவு ஈரப்பதம் உள்ள இடத்தில் ஒரு உப்பு பாக்கெட்டைத் திறந்தால், உப்பு காற்றில் உள்ள ஈரத்தை உறிஞ்சி உடனே பிசுபிசுப்பாகிவிடும். ஆனால் சோபியா உப்பு 'பொலபொலவென்று' கொட்டியதாக பொய் சொல்கிறார்.",
+        "key_clue": "அன்று காற்றில் ஈரப்பதம் தொண்ணூறு சதவீதம் இருந்தது.",
+        "deduction_steps": [
+          "The setting is a coastal town (Tuticorin) with 90% humidity (Clue 2 & 3).",
+          "Physical fact: Salt is hygroscopic; in high humidity, it absorbs moisture instantly and clumps.",
+          "Sofia claims the salt was 'powdery and dry' (polapolavendru) while pouring it into the jar.",
+          "This is physically impossible under those conditions, proving her alibi is a lie."
+        ],
+        "red_herring": "Kumar (Suspect 3) says he heard a sound at 3 PM, making him look suspicious as if he was watching the house, but he was just reporting what he heard.",
+        "why_not_others": "Ram's sweating is a natural reaction to working in a kitchen during high humidity. Kumar's statement doesn't contradict any environmental facts."
+      },
+      "youtube_id": "ueSKNxo6ByM",
+      "instagram_id": "18113374775146216",
+      "suspects": [
+        {
+          "name": "Ram",
+          "gender": "male",
+          "age": 42,
+          "look": "A middle-aged man in a white chef coat, looking tired, holding a small hand towel, sweating slightly."
+        },
+        {
+          "name": "Sofia",
+          "gender": "female",
+          "age": 28,
+          "look": "A young woman in a modern floral saree, holding an empty salt packet, looking calm."
+        },
+        {
+          "name": "Kumar",
+          "gender": "male",
+          "age": 50,
+          "look": "An older security guard in a blue uniform, holding a heavy torch, looking stern."
+        }
+      ],
+      "solvers_thanked": []
     }
   ]
 }
